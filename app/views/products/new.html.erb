@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>New product</h1>
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <%= f.input :name,
+                label: 'Nom',
+                input_html: { autocomplete: 'name' } %>
+    <%= f.input :tagline,
+                label: 'Tagline',
+                input_html: { autocomplete: 'tagline' } %>
+    <%= f.button :submit, "Create Product", class: "btn btn-primary w-100" %>
+  <% end %>
+</div>
