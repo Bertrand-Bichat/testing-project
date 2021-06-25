@@ -1,6 +1,23 @@
 # SimpleCov
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_filter '/bin/'
+  add_filter '/config/'
+  add_filter '/lib/'
+  add_filter '/public/'
+  add_filter '/spec/'
+  add_filter '/storage/'
+  add_filter '/test/'
+  add_filter '/vendor/'
+
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Models', 'app/models'
+  add_group 'Helpers', 'app/helpers'
+  add_group 'Mailers', 'app/mailers'
+end
+# This outputs the report to your public folder
+# You will want to add this to .gitignore
+# SimpleCov.coverage_dir 'public/coverage'
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
