@@ -6,4 +6,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get new" do
+    get new_product_url
+    assert_response :success
+  end
+
+  # test "should post create" do
+  #   post products_url
+  #   assert_response :success
+  # end
 end

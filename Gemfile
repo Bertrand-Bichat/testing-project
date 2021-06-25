@@ -54,6 +54,9 @@ group :development, :test do  gem 'pry-byebug'
 
   # testing
   gem 'launchy'
+
+  # code coverage
+  gem 'simplecov', require: false
 end
 
 group :development do
